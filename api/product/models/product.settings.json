@@ -2,11 +2,13 @@
   "kind": "collectionType",
   "collectionName": "products",
   "info": {
-    "name": "product"
+    "name": "product",
+    "description": ""
   },
   "options": {
     "increments": true,
-    "timestamps": true
+    "timestamps": true,
+    "draftAndPublish": false
   },
   "attributes": {
     "title": {
@@ -21,7 +23,7 @@
       "type": "float"
     },
     "image": {
-      "model": "file",
+      "collection": "file",
       "via": "related",
       "allowedTypes": [
         "files",
@@ -29,20 +31,16 @@
         "videos"
       ],
       "plugin": "upload",
-      "required": true
+      "required": false,
+      "pluginOptions": {}
     },
     "slug": {
       "type": "uid",
       "targetField": "title"
     },
     "categories": {
-      "collection": "category",
-      "via": "products"
-    },
-    "Custom_field": {
-      "type": "component",
-      "repeatable": true,
-      "component": "custom.custom-field"
+      "via": "products",
+      "collection": "category"
     },
     "status": {
       "type": "enumeration",
@@ -52,6 +50,18 @@
       ],
       "default": "published",
       "required": true
+    },
+    "New": {
+      "type": "boolean",
+      "default": false
+    },
+    "colour": {
+      "type": "json"
+    },
+    "sub_categories": {
+      "via": "products",
+      "collection": "sub-category",
+      "dominant": true
     }
   }
 }
