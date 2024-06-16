@@ -22,7 +22,7 @@
     "price": {
       "type": "float"
     },
-    "image": {
+    "SecondaryImages": {
       "collection": "file",
       "via": "related",
       "allowedTypes": [
@@ -42,14 +42,15 @@
       "via": "products",
       "collection": "category"
     },
-    "status": {
+    "type": {
       "type": "enumeration",
       "enum": [
-        "draft",
-        "published"
+        "normal",
+        "featured",
+        "trending"
       ],
-      "default": "published",
-      "required": true
+      "default": "normal",
+      "required": false
     },
     "New": {
       "type": "boolean",
@@ -62,6 +63,30 @@
       "via": "products",
       "collection": "sub-category",
       "dominant": true
+    },
+    "MainImage": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "SizeGuide": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
     }
   }
 }

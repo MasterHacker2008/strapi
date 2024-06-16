@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_custom_custom_fields",
+  "info": {
+    "name": "Page",
+    "icon": "archway",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "BgImage": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "Description": {
+      "type": "text"
+    },
+    "ButtonLink": {
+      "type": "string"
+    }
+  }
+}
