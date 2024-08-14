@@ -22,7 +22,7 @@
     "price": {
       "type": "float"
     },
-    "SecondaryImages": {
+    "images": {
       "collection": "file",
       "via": "related",
       "allowedTypes": [
@@ -64,7 +64,7 @@
       "collection": "sub-category",
       "dominant": true
     },
-    "MainImage": {
+    "mainImage": {
       "model": "file",
       "via": "related",
       "allowedTypes": [
@@ -87,6 +87,19 @@
       "plugin": "upload",
       "required": false,
       "pluginOptions": {}
+    },
+    "highlights": {
+      "type": "json"
+    },
+    "details": {
+      "type": "text"
+    },
+    "sizes": {
+      "type": "json"
+    },
+    "discount": {
+      "type": "integer",
+      "default": 0
     }
   }
 }
