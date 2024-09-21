@@ -21,8 +21,8 @@
     "email": {
       "type": "email"
     },
-    "status": {
-      "type": "string"
+    "success": {
+      "type": "boolean"
     }
   }
 }

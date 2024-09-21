@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_sizes_sizes",
+  "info": {
+    "name": "size",
+    "icon": "tshirt",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "inStock": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_colours_colours",
+  "info": {
+    "name": "colours",
+    "icon": "pen-square"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "hex": {
+      "type": "string"
+    },
+    "mainImage": {
+      "type": "component",
+      "repeatable": false,
+      "component": "image.image"
+    },
+    "cartImage": {
+      "type": "component",
+      "repeatable": false,
+      "component": "image.image"
+    }
+  }
+}

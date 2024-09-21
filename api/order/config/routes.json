@@ -24,10 +24,19 @@
         "policies": []
       }
     },
+    
     {
       "method": "POST",
       "path": "/orders",
       "handler": "order.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/orders/webhook",
+      "handler": "order.webhook",
       "config": {
         "policies": []
       }

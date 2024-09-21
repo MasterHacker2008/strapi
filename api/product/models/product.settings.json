@@ -17,7 +17,7 @@
     },
     "description": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "price": {
       "type": "float"
@@ -54,10 +54,7 @@
     },
     "New": {
       "type": "boolean",
-      "default": false
-    },
-    "colour": {
-      "type": "json"
+      "default": true
     },
     "sub_categories": {
       "via": "products",
@@ -94,12 +91,30 @@
     "details": {
       "type": "text"
     },
-    "sizes": {
-      "type": "json"
-    },
     "discount": {
       "type": "integer",
       "default": 0
+    },
+    "reviews": {
+      "type": "component",
+      "repeatable": true,
+      "component": "review.review"
+    },
+    "sizes": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sizes.size"
+    },
+    "colours": {
+      "type": "component",
+      "repeatable": true,
+      "component": "colours.colours"
+    },
+    "reviewFormLink": {
+      "type": "string"
+    },
+    "previousPrice": {
+      "type": "float"
     }
   }
 }
