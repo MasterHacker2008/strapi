@@ -23,6 +23,12 @@
     },
     "success": {
       "type": "boolean"
+    },
+    "cancelled": {
+      "type": "boolean"
+    },
+    "address": {
+      "type": "richtext"
     }
   }
 }
