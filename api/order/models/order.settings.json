@@ -18,17 +18,17 @@
     "products": {
       "type": "json"
     },
-    "email": {
-      "type": "email"
-    },
     "success": {
       "type": "boolean"
     },
     "cancelled": {
       "type": "boolean"
     },
+    "email": {
+      "type": "string"
+    },
     "address": {
-      "type": "richtext"
+      "type": "json"
     }
   }
 }

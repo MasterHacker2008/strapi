@@ -117,7 +117,7 @@ async function fulfillCheckout(sessionId) {
         {
           email: "arjunkunder866@gmail.com",
           name: "StylePlay",
-        }
+        },
       ],
       templateId: 5,
       params: orderData,
@@ -131,11 +131,13 @@ async function fulfillCheckout(sessionId) {
     // Continue your local fulfillment logic (e.g., updating Strapi order)
     const updatedOrder = await strapi.services.order.update(
       { stripeId: sessionId }, // Find the order by stripeId
-      { 
-        success: true, 
-        email: session.customer_details?.email || "No email provided",
-        address: session.shipping_details?.address || "No address provided"
-      }
+      {
+        $set: {
+          success: true,
+          email: session.customer_details?.email || "Error Displaying Email",
+          address: session.shipping_details.address || "Error Displaying Address"
+        },
+      } // Mark the order as successful
     );
 
     // Send Confimation mail
