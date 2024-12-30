@@ -219,9 +219,9 @@ module.exports = {
       const session = await stripe.checkout.sessions.create({
         shipping_address_collection: { allowed_countries: countryCodes },
         shipping_options: [
-          // {
-          //   shipping_rate: "shr_1QayOJRojTAIyPrWeUKlhken", //Live Shipping rate
-          // },
+          {
+            shipping_rate: "shr_1QayOJRojTAIyPrWeUKlhken", //Live Shipping rate
+          },
         ],
         payment_method_types: ["card"],
         mode: "payment",
