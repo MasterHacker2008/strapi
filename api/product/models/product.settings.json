@@ -88,9 +88,6 @@
     "highlights": {
       "type": "json"
     },
-    "details": {
-      "type": "text"
-    },
     "discount": {
       "type": "integer",
       "default": 0
@@ -115,6 +112,9 @@
     },
     "previousPrice": {
       "type": "float"
+    },
+    "details": {
+      "type": "richtext"
     }
   }
 }
