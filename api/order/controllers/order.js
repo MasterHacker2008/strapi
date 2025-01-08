@@ -79,10 +79,20 @@ async function fulfillCheckout(sessionId) {
   const options = { day: "2-digit", month: "long", year: "numeric" };
   const formattedDate = date.toLocaleDateString("en-US", options);
 
+  
+
   if (session.payment_status == "paid") {
+    const order = await strapi.services.order.findOne({ stripeId: sessionId });
+
+    if (!order) {
+      console.error("Order not found for sessionId:", sessionId);
+      return;
+    }
+
     const orderData = {
       sessionId: sessionId,
       orderDate: formattedDate,
+      orderId: order.orderId,
       name: session.customer_details.name,
       email: session.customer_details.email,
       address: session.shipping_details.address,
@@ -220,7 +230,8 @@ module.exports = {
         shipping_address_collection: { allowed_countries: countryCodes },
         shipping_options: [
           {
-            shipping_rate: "shr_1QayOJRojTAIyPrWeUKlhken", //Live Shipping rate
+            // shipping_rate: "shr_1QayOJRojTAIyPrWeUKlhken", //Live Shipping rate
+            shipping_rate: "shr_1QayevRojTAIyPrWwk0PTbyc", //Test Shipping rate
           },
         ],
         payment_method_types: ["card"],
@@ -228,9 +239,6 @@ module.exports = {
         success_url: process.env.CLIENT_URL + "/confirmation?success=true",
         cancel_url: process.env.CLIENT_URL + "/confirmation?success=false",
         line_items: lineItems,
-        automatic_tax: {
-          enabled: true,
-        },
       });
 
       await strapi.services.order.create({ products, stripeId: session.id });

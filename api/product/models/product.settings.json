@@ -115,6 +115,10 @@
     },
     "details": {
       "type": "richtext"
+    },
+    "Publish": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

@@ -29,6 +29,10 @@
     },
     "address": {
       "type": "json"
+    },
+    "orderId": {
+      "type": "uid",
+      "maxLength": 6
     }
   }
 }
