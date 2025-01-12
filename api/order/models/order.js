@@ -12,13 +12,7 @@ module.exports = {
         if (!data.orderId) {
           data.orderId = await generateUniqueOrderId();
         }
-      },
-      async beforeUpdate(params, data) {
-        // Ensure orderId remains intact if not set
-        if (!data.orderId) {
-          data.orderId = await generateUniqueOrderId();
-        }
-      },
+      }
     },
   };
   
