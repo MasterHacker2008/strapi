@@ -18,11 +18,6 @@
       "type": "uid",
       "targetField": "name"
     },
-    "products": {
-      "via": "categories",
-      "collection": "product",
-      "dominant": true
-    },
     "description": {
       "type": "text"
     },
@@ -41,6 +36,16 @@
     "sub_categories": {
       "via": "categories",
       "collection": "sub-category"
+    },
+    "colours": {
+      "type": "string"
+    },
+    "Publish": {
+      "type": "boolean"
+    },
+    "products": {
+      "via": "category",
+      "collection": "product"
     }
   }
 }

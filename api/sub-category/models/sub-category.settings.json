@@ -20,8 +20,8 @@
       "collection": "product"
     },
     "categories": {
-      "collection": "category",
       "via": "sub_categories",
+      "collection": "category",
       "dominant": true
     }
   }

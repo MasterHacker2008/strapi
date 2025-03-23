@@ -38,9 +38,9 @@
       "type": "uid",
       "targetField": "title"
     },
-    "categories": {
-      "via": "products",
-      "collection": "category"
+    "category": {
+      "model": "category",
+      "via": "products"
     },
     "type": {
       "type": "enumeration",
